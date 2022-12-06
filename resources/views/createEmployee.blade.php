@@ -7,11 +7,11 @@
                 <div class="card">
                     <div class="card-header">{{ ('Create') }}</div>
 
-                    @foreach($companies as $item)
-                            <th scope="row">{{ $item->id}}</th>
-                            <td>{{ $item->name}}</td>
-                            <td>{{ $item->email}}</td>
-                    @endforeach
+{{--                    @foreach($companies as $item)--}}
+{{--                            <th scope="row">{{ $item->id}}</th>--}}
+{{--                            <td>{{ $item->name}}</td>--}}
+{{--                            <td>{{ $item->email}}</td>--}}
+{{--                    @endforeach--}}
                     <div class="card-body">
                         <form method="POST" action="{{url('insertEmployee')}}" enctype="multipart/form-data">
                             @csrf

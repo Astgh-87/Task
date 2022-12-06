@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\CompanyRequest;
 use App\Models\Company;
 use App\Models\Employee;
-
+use DB;
 
 class CompanyController extends Controller
 {
@@ -17,7 +17,10 @@ class CompanyController extends Controller
     public function index()
     {
         $companies = Company::withCount('employees')->paginate(10);
-        return view('company', compact('companies'));
+//        $count2 = Employee::where('company', '=','')->count();
+//        dd($count2);
+        return view('company', ['companies' =>$companies]);
+
 
     }
 

@@ -3,8 +3,9 @@
 @section('content')
 
     <body>
-    <h1 class="text-3xl font-bold underline">
-        Employees list!
+    <h1 class="text-3xl font-bold underline row justify-content-center">
+
+    Employees list!
     </h1>
     </body>
 <div class="container">

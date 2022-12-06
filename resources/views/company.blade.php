@@ -4,7 +4,7 @@
     <!DOCTYPE html>
 
 <body>
-<h1 class="text-3xl font-bold underline">
+<h1 class="text-3xl font-bold underline row justify-content-center">
     Companies list!
 </h1>
 </body>
@@ -37,7 +37,7 @@
                             @foreach($companies as $item)
 
                                 <tr>
-                                         <th scope="row">{{ $item->id}}</th>
+                                        <th scope="row">{{ $item->id}}</th>
                                         <td>{{ $item->name}}</td>
                                         <td>{{ $item->email}}</td>
                                         <td>{{ $item->website}}</td>
@@ -45,15 +45,15 @@
                                     <td><img alt="" src="{{ url('public/Image/'.$item->logo) }}"
                                              style="height: 100px; width: 100px;">
                                         </td>
-                                    @foreach($item->employees as $employ)
 
-                                    <td> {{ $employ->id }} </td>
-                                    @endforeach
+                                    @foreach($item->employees as $employ)@endforeach
+                                    <td> {{$item->employees_count  }} </td>
+
                                     <td>
                                         <a href={{ url('update/'.$item->id) }}><button type="button"  class="btn btn-outline-primary" data-dismiss="modal">Update</button></a>
                                         <a href={{ url('delete-company/'.$item->id) }}><button type="submit" class="btn btn-outline-danger ml-1" onClick='showModel({!! $item->id !!})'>Delete</button></a>
 
-                                        </td>
+                                    </td>
                                 </tr>
 
                             @endforeach
